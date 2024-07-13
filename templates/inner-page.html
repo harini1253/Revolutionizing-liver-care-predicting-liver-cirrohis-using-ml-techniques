@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liver Cirrhosis Prediction Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            background: url("{{ url_for('static', filename='form.jpg') }}") no-repeat center center fixed;
+            background-size: cover;
+        }
+         input[type="number"], select {
+            border-radius: 25px;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 25px;
+        }
+
+        header, footer {
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+        }
+
+        button {
+            border-radius: 25px;
+            padding: 10px 20px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Liver Cirrhosis Prediction Form</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/inner-page">Prediction Form</a></li>
+                <li><a href="/portfolio-details">Details</a></li>
+            </ul>
+        </nav>
+        <main>
+            <form action="/predict" method="post">
+                <!-- Categorical Features -->
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="female">Female</option>
+                    <option value="male">Male</option>
+                    <option value="transgender">Transgender</option>
+                </select><br>
+
+                <label for="place">Place (location where the patient lives):</label>
+                <select id="place" name="place" required>
+                    <option value="rural">Rural</option>
+                    <option value="urban">Urban</option>
+                </select><br>
+
+                <label for="alcohol_type">Type of alcohol consumed:</label>
+                <select id="alcohol_type" name="alcohol_type" required>
+                    <option value="both">Both</option>
+                    <option value="branded liquor">Branded Liquor</option>
+                    <option value="country liquor">Country Liquor</option>
+                </select><br>
+
+                <label for="hepatitis_b">Hepatitis B infection:</label>
+                <select id="hepatitis_b" name="hepatitis_b" required>
+                    <option value="negative">Negative</option>
+                    <option value="positive">Positive</option>
+                </select><br>
+
+                <label for="hepatitis_c">Hepatitis C infection:</label>
+                <select id="hepatitis_c" name="hepatitis_c" required>
+                    <option value="negative">Negative</option>
+                    <option value="positive">Positive</option>
+                </select><br>
+
+                <label for="prediction value">Prediction value:</label>
+                <select id="prediction value" name="prediction value" required>
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select><br>
+
+                <label for="obesity">Obesity:</label>
+                <select id="obesity" name="obesity" required>
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select><br>
+
+                <label for="family_history">Family history of cirrhosis/hereditary:</label>
+                <select id="family_history" name="family_history" required>
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select><br>
+
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" step="1" required><br>
+
+                <label for="duration_alcohol">Duration of alcohol consumption (years):</label>
+                <input type="number" id="duration_alcohol" name="duration_alcohol" step="1" required><br>
+
+                <label for="quantity_alcohol">Quantity of alcohol consumption (quarters/day):</label>
+                <input type="number" id="quantity_alcohol" name="quantity_alcohol" step="0.001" required><br>
+
+                <label for="tg">TG:</label>
+                <input type="number" id="tg" name="tg" step="0.1" required><br>
+
+                <label for="ldl">LDL:</label>
+                <input type="number" id="ldl" name="ldl" step="0.1" required><br>
+
+                <label for="total_bilirubin">Total Bilirubin (mg/dl):</label>
+                <input type="number" id="total_bilirubin" name="total_bilirubin" step="0.1" required><br>
+
+                <label for="ag_ratio">A/G Ratio:</label>
+                <input type="number" id="ag_ratio" name="ag_ratio" step="0.1" required><br>
+
+                <label for="pcv">PCV (%)</label>
+                <input type="number" id="pcv" name="pcv" step="0.1" required><br>
+
+                <label for="mcv">MCV (femtoliters/cell):</label>
+                <input type="number" id="mcv" name="mcv" step="0.1" required><br>
+
+                <label for="total_count">Total Count:</label>
+                <input type="number" id="total_count" name="total_count" step="1" required><br>
+
+                <label for="polymorphs">Polymorphs (%) :</label>
+                <input type="number" id="polymorphs" name="polymorphs" step="0.1" required><br>
+
+                <label for="lymphocytes">Lymphocytes (%) :</label>
+                <input type="number" id="lymphocytes" name="lymphocytes" step="0.1" required><br>
+
+                <label for="monocytes">Monocytes (%) :</label>
+                <input type="number" id="monocytes" name="monocytes" step="0.1" required><br>
+
+                <label for="eosinophils">Eosinophils (%) :</label>
+                <input type="number" id="eosinophils" name="eosinophils" step="0.1" required><br>
+
+                <label for="basophils">Basophils (%) :</label>
+                <input type="number" id="basophils" name="basophils" step="0.1" required><br>
+
+                <label for="platelet_count">Platelet Count (lakhs/mm):</label>
+                <input type="number" id="platelet_count" name="platelet_count" step="0.01" required><br>
+
+                <label for="albumin">Albumin (g/dl):</label>
+                <input type="number" id="albumin" name="albumin" step="0.1" required><br>
+
+                <label for="globulin">Globulin (g/dl):</label>
+                <input type="number" id="globulin" name="globulin" step="0.1" required><br>
+
+                <label for="sgot_ast">SGOT/AST (U/L):</label>
+                <input type="number" id="sgot_ast" name="sgot_ast" step="1" required><br>
+
+                <label for="sgpt_alt">SGPT/ALT (U/L):</label>
+                <input type="number" id="sgpt_alt" name="sgpt_alt" step="1" required><br>
+
+                <label for="systolic">Systolic Blood Pressure:</label>
+                <input type="number" id="systolic" name="systolic" step="1" required><br>
+
+                <label for="diastolic">Diastolic Blood Pressure:</label>
+                <input type="number" id="diastolic" name="diastolic" step="1" required><br>
+
+                <button type="submit">Predict</button>
+            </form>
+        </main>
+        <footer>
+            <p>&copy; 2024 Liver Cirrhosis Prediction. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
