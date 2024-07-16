@@ -1,1 +1,1 @@
-# Revolutionzing-liver-care-predicting-liver-disease-cirohhis-using-ml-techniques
+# Revolutionzing-liver-care-predicting-liver-disease-cirrohis-using-ml-techniques
