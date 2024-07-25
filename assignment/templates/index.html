@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Liver Cirrhosis Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            background: url("{{ url_for('static', filename='index.jpg') }}") no-repeat center center fixed;
+            background-size: cover;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 style="color:#D32F2F;">Welcome to the Liver Cirrhosis Prediction Application</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/inner-page">Prediction Form</a></li>
+                <li><a href="/portfolio-details">Details</a></li>
+            </ul>
+        </nav>
+        <main>
+            <p>This application helps in predicting liver cirrhosis based on various factors.</p>
+            <p>Click <a href="/inner-page">here</a> to go to the prediction form.</p>
+        </main>
+        <footer>
+            <p>&copy; 2024 Liver Cirrhosis Prediction. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
